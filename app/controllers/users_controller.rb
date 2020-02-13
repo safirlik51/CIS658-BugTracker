@@ -21,9 +21,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
       if @user.save
+        flash[:error] = "Required fields are missing"
         redirect_to @user
       else
-        render 'action::new'
+        render 'new'
       end
   end
 
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         redirect_to @user
       else
-        render 'action::edit'
+        render 'edit'
       end
   end
 
