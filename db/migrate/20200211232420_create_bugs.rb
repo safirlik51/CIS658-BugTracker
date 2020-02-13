@@ -3,9 +3,9 @@ class CreateBugs < ActiveRecord::Migration[6.0]
     create_table :bugs do |t|
       t.string :title
       t.text :description
-      t.text :issue_type, default: 2
-      t.string :priority, default: 1 
-      t.string :status, default: 0
+      t.integer :issue_type, default: 2
+      t.integer :priority, default: 1 
+      t.integer :status, default: 0
 
       t.timestamps
     end
