@@ -28,6 +28,15 @@ class BugsController < ApplicationController
   def create
     @bug = Bug.new(bug_params)
 
+    if bug_params[:user_id]
+      begin
+        user = User.find(bug_params[:user_id])
+        @bug.build_user(:id => user.id)
+      rescue
+        puts "error!"
+      end
+    end
+
     if @bug.save
       redirect_to @bug
     else
@@ -52,7 +61,7 @@ class BugsController < ApplicationController
   def destroy
     @bug = Bug.find(params[:id])
     @bug.destroy
-    redirect_to bugs_url
+    redirect_to bugs_path
   end
 
   def set_options
@@ -69,6 +78,6 @@ class BugsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bug_params
-      params.require(:bug).permit(:title, :description, :issue_type, :priority, :status)
+      params.require(:bug).permit(:title, :description, :issue_type, :priority, :status, :user_id)
     end
 end

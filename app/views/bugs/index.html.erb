@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>User</th>
       <th>Title</th>
       <th>Description</th>
       <th>Issue Type</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @bugs.each do |bug| %>
       <tr>
+        <td><%= bug.user ? bug.user.fname + " " + bug.user.lname : "-"%></td>
         <td><%= bug.title %></td>
         <td><%= bug.description %></td>
         <td><%= bug.issue_type %></td>
@@ -33,3 +35,4 @@
 <br>
 
 <%= link_to 'New Bug', new_bug_path %>
+<%= link_to 'Users', users_path %>

@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>User:</strong> 
+  <%= @bug.user ? @bug.user.fname + " " + @bug.user.lname : "-"%>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @bug.description %>
 </p>
