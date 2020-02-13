@@ -5,7 +5,7 @@
 
       <ul>
         <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li><%= :message %></li>
         <% end %>
       </ul>
     </div>
@@ -14,7 +14,6 @@
   <div class="field">
     <%= form.label :fname %>
     <%= form.text_field :fname %>
-    <%= form.error_messages :header => "Please complete required fields", :message => "First Name must not be blank" %>
   </div>
 
   <div class="field">
