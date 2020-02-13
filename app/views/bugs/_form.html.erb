@@ -13,8 +13,7 @@
 
   <div>
     <%= form.label :user_id %>
-    <%= form.select :user_id, options_for_select(User.all.collect {|a| ["#{a.fname}, #{a.lname}", a.id]}, 
-      selected: (@bug.user ? @bug.user.id : User.first.id)), {} %>
+    <%= form.select :user_id, options_for_select(User.all.collect do |a| ["#{a.fname}, #{a.lname}", a.id] end), {} %>
   </div>
 
   <div class="field">
