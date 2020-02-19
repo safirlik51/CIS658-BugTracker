@@ -5,3 +5,22 @@
      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> 
    </div>
  </div>
+ <div class="container-fluid">
+  <!-- Example row of columns -->
+  <div class="row">
+   <% @bugs.each do |post| %>
+   <div class="col-md-4">
+      <h2><%= bug.title%></h2>
+      <p><%=post.description.truncate_words(30)%></p>
+      <p>
+        <%= link_to 'Read more &raquo;'.html_safe, post, class: "btn btn-default"%>
+      </p>
+   </div>
+<% end %>
+  </div>
+  <hr>
+     
+  <footer>
+    <p>&copy; 2018 Company, Inc.</p>
+  </footer>
+</div> 
