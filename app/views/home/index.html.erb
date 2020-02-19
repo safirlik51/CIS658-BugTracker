@@ -1,19 +1,18 @@
 <div class="jumbotron-fluid">
   <div class="container">
-    <h1>Welcome to my world of bees!</h1>
-     <p>The happiness of the bee and the dolphin is to exist. For man it is to know that and to wonder at it.</p>
-     <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> 
+    <h1>Welcome to the CIS658 Bug Tracking System!</h1>
+     <p>Use the navigation bar above to open, view, or manage a request!</p>
    </div>
  </div>
  <div class="container-fluid">
   <!-- Example row of columns -->
   <div class="row">
-   <% @bugs.each do |post| %>
+   <% @bugs.each do |bug| %>
    <div class="col-md-4">
-      <h2><%=@bug.title%></h2>
-      <p><%=@bug.description.truncate_words(30)%></p>
+      <h2><%= bug.title %></h2>
+      <p><%= bug.description.truncate_words(30) %></p>
       <p>
-        <%= link_to 'Read more &raquo;'.html_safe, post, class: "btn btn-default"%>
+        <%= link_to 'View Bug &raquo;'.html_safe, bug, class: "btn btn-info"%>
       </p>
    </div>
 <% end %>
@@ -21,6 +20,6 @@
   <hr>
      
   <footer>
-    <p>&copy; 2018 Company, Inc.</p>
+    <p>&copy; 2020 Spencer Firlik CIS658 HW5</p>
   </footer>
 </div> 

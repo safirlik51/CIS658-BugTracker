@@ -10,38 +10,40 @@
       </ul>
     </div>
   <% end %>
+  <div class="fullform">
+    <div class="col-sm-1">
+      <div>
+        <%= form.label "User:" %>
+        <%= form.select :user_id, options_for_select(User.all.collect do |a| ["#{a.fname}, #{a.lname}", a.id] end), {} %>
+      </div>
 
-  <div>
-    <%= form.label :user_id %>
-    <%= form.select :user_id, options_for_select(User.all.collect do |a| ["#{a.fname}, #{a.lname}", a.id] end), {} %>
-  </div>
+      <div class="field">
+        <%= form.label "Title:" %>
+        <%= form.text_field :title %>
+      </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+      <div class="field">
+        <%= form.label "Description:" %>
+        <%= form.text_area :description %>
+      </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="field">
+        <%= form.label "Type:" %>
+        <%= form.select :issue_type, @issue_types.keys %>
+      </div>
 
-  <div class="field">
-    <%= form.label :issue_type %>
-    <%= form.select :issue_type, @issue_types.keys %>
-  </div>
+      <div class="field">
+        <%= form.label "Priority:" %>
+        <%= form.select :priority, @priorities.keys %>
+      </div>
 
-  <div class="field">
-    <%= form.label :priority %>
-    <%= form.select :priority, @priorities.keys %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.select :status, @statuses.keys %>
-  </div>
-
+      <div class="field">
+        <%= form.label "Status:" %>
+        <%= form.select :status, @statuses.keys %>
+      </div>
+    </div>
+  </div><br>
   <div class="actions">
-    <%= form.submit %>
+        <%= form.submit %>
   </div>
 <% end %>

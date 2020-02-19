@@ -10,28 +10,31 @@
       </ul>
     </div>
   <% end %>
+<div class="fullform">
+  <div class="col-sm-2">
+    <div class="field">
+      <%= form.label "First Name:" %>
+      <%= form.text_field :fname %>
+    </div>
 
-  <div class="field">
-    <%= form.label :fname %>
-    <%= form.text_field :fname %>
+    <div class="field">
+      <%= form.label "Last Name:" %>
+      <%= form.text_field :lname %>
+    </div>
   </div>
+  <div class="col-sm-1">
+    <div class="field">
+      <%= form.label "Email:" %>
+      <%= form.text_field :email %>
+    </div>
 
-  <div class="field">
-    <%= form.label :lname %>
-    <%= form.text_field :lname %>
+    <div class="field">
+      <%= form.label "Thumbnail:" %>
+      <%= form.text_field :thumbnail %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :thumbnail %>
-    <%= form.text_field :thumbnail %>
-  </div>
-
-  <div class="actions">
+</div><br>
+<div class="actions">
     <%= form.submit %>
-  </div>
+</div>
 <% end %>
